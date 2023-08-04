@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "电商",
+    "style": "折扣"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "限时折扣疯抢中"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "超值好货不容错过"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/discount_image"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/discount_icon"
+    }
+  ]
+}

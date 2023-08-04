@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "travel",
+    "style": "adventure"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "Explore Uncharted Territories"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "Join our thrilling expedition!"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/adventure_image"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/food_image"
+    }
+  ]
+}

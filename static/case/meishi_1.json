@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "美食",
+    "style": "时尚"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "尝遍世间美味"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "开启美食之旅"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/food_image"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/food_image"
+    }
+  ]
+}

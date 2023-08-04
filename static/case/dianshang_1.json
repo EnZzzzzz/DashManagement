@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "dianshang",
+    "style": "festive"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "领券下单立减30"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "时尚单品全场满300减100"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/image"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/food_image"
+    }
+  ]
+}

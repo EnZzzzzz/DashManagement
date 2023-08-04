@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "电商",
+    "style": "时尚"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "时尚潮流热卖"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "打造个性时尚"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/fashion_image"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/fashion_icon"
+    }
+  ]
+}

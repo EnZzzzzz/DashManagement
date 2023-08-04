@@ -1,0 +1,28 @@
+{
+  "prop": {
+    "industry": "健身",
+    "style": "现代"
+  },
+  "element": [
+    {
+      "name": "title",
+      "type": "text",
+      "source": "全新健身体验"
+    },
+    {
+      "name": "subtitle",
+      "type": "text",
+      "source": "打造完美身材"
+    },
+    {
+      "name": "icon",
+      "type": "image",
+      "source": "path/to/fitness_icon"
+    },
+    {
+      "name": "image",
+      "type": "image",
+      "source": "path/to/fitness_image"
+    }
+  ]
+}
