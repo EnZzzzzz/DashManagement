@@ -15,12 +15,12 @@
       "source": "打造完美身材"
     },
     {
-      "name": "icon",
+      "name": "image",
       "type": "image",
       "source": "/static/imgs/4.jpg"
     },
     {
-      "name": "image",
+      "name": "icon",
       "type": "image",
       "source": "/static/imgs/logo.png"
     }

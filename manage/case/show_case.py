@@ -27,7 +27,16 @@ class ShowCase:
     def _lazy_init_layout(self):
         if self._body is empty:
             all_case = db.get_all_case()
-            self._body = self._create_card(all_case[0])
+
+            body_items = []
+            while all_case:
+                row_items = []
+                for _ in range(min(self.col_num, len(all_case))):
+                    case = all_case.pop()
+                    case_body = self._create_card(case)
+                    row_items.append(case_body)
+                body_items.append(dbc.Row(row_items, className="mb-3"))
+            self._body = html.Div(body_items)
 
     @staticmethod
     def _create_card(case: Case):
@@ -37,7 +46,7 @@ class ShowCase:
         desc = case.get_element(Case.DESC).source
         card_body = dbc.Card(
             [
-                dbc.CardImg(src=img, top=True),
+                dbc.CardImg(src=img, top=True, style={"object-fit": "contain"}),
                 dbc.CardBody([
                     dbc.Row([
                         dbc.Col([html.Img(src=logo, style={"width": "10rem"})]),
@@ -47,7 +56,7 @@ class ShowCase:
                     ])
                 ]),
             ],
-            style={"width": "25rem"},
+            style={"width": "25rem"}
         )
         return card_body
 
