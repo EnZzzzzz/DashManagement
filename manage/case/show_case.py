@@ -56,7 +56,7 @@ class ShowCase:
                     ])
                 ]),
             ],
-            style={"width": "25rem"}
+            style={"width": "25rem", "margin-left": "15px"}
         )
         return card_body
 
