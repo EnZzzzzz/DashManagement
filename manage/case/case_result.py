@@ -14,10 +14,65 @@ class CaseResult(Page):
             self._layout = html.Div([
                 html.H4("生成结果"),
                 html.Hr(),
-                html.H4("暂未实现"),
+                self._create_result(),
+                self._create_result(),
+                self._create_result(),
+                self._create_processing(),
                 html.Div([dbc.Pagination(max_value=50, first_last=True, previous_next=True, fully_expanded=False,
                                          style={"justify-content": "center"})])
             ])
+
+    def _create_processing(self):
+        processing = dbc.Card([
+            dbc.Row([
+                html.Div(
+                    [
+                        dbc.Button(dbc.Spinner(size="sm"), color="primary", disabled=True, className="me-2"),
+                        dbc.Button("生成中: dianshang 1", color="primary", disabled=True),
+                    ],
+                    style={"border": "none"}
+                ),
+            ], justify="start")
+        ], style={"border": "none"}
+        )
+        return processing
+
+    def _create_result(self):
+        created = dbc.Card([
+            dbc.Row([
+                dbc.Col([
+                    dbc.Carousel(items=[
+                        {"key": "1", "src": "/static/imgs/1.jpg", "caption": "Image 1"},
+                        {"key": "2", "src": "/static/imgs/2.jpg", "caption": "Image 1"},
+                        {"key": "3", "src": "/static/imgs/3.jpg", "caption": "Image 1"},
+                        {"key": "4", "src": "/static/imgs/4.jpg", "caption": "Image 1"},
+                        {"key": "5", "src": "/static/imgs/5.jpg", "caption": "Image 1"},
+                    ], controls=True, indicators=False, interval=4000, ride="carousel",
+                        style={"width": "35rem"},
+                    )
+                ]),
+                dbc.Col([
+                    html.H3("生成信息"),
+                    html.Hr(),
+                    dbc.Row([
+                        dbc.Col([
+                            html.H5("配色编号： 1104"),
+                            html.H5("标题颜色： 1104"),
+                            html.H5("背景颜色： 1104"),
+                            html.H5("附件颜色： 1104"),
+                        ]),
+                        dbc.Col([
+                            html.H5("配色编号： 1104"),
+                            html.H5("标题颜色： 1104"),
+                            html.H5("背景颜色： 1104"),
+                            html.H5("附件颜色： 1104"),
+                        ])
+                    ])
+                ])
+            ], className="mb-2"),
+            html.Hr()
+        ], style={"border": "0px"})
+        return created
 
 
 case_result = CaseResult()
