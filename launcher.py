@@ -19,8 +19,4 @@ index.activate()
 app.layout = html.Div([dcc.Location(id="url"), index.sidebar, index.content])
 
 if __name__ == '__main__':
-    Console.debug("debug!", highlight=False)
-    Console.info("info!", highlight=False)
-    Console.warn("warn!", highlight=False)
-    Console.error("error!", highlight=False)
     app.run(debug=True)

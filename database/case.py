@@ -27,7 +27,6 @@ class Case:
     def get_element(self, name):
         for ele in self.elements:
             if ele.name == name:
-                Console.info("Element found!")
                 return ele
         Console.warn(f"No such element named {name} found!")
         return None
