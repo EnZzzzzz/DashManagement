@@ -29,29 +29,27 @@ class ShowCase:
             all_case = db.get_all_case()
             self._body = self._create_card(all_case[0])
 
-    def _create_card(self, case: Case):
+    @staticmethod
+    def _create_card(case: Case):
         img = case.get_element(Case.IMAGE).source
+        logo = case.get_element(Case.ICON).source
         title = case.get_element(Case.TITLE).source
         desc = case.get_element(Case.DESC).source
         card_body = dbc.Card(
             [
                 dbc.CardImg(src=img, top=True),
-                dbc.CardBody([html.H4(title, className=f"{case.case_name}-card-title"),
-                              html.P(desc, className=f"{case.case_name}-card-text"),
-                              dbc.Button("Go somewhere", color=f"primary")]),
+                dbc.CardBody([
+                    dbc.Row([
+                        dbc.Col([html.Img(src=logo, style={"width": "10rem"})]),
+                        dbc.Col([html.H4(title, className=f"{case.name}-card-title"),
+                                 html.P(desc, className=f"{case.name}-card-text"),
+                                 html.Small(case.name, className="card-text text-muted")])
+                    ])
+                ]),
             ],
-            style={"width": "18rem"},
+            style={"width": "25rem"},
         )
         return card_body
-
-    def _create_card_title(self):
-        pass
-
-    def _create_card_logo(self):
-        pass
-
-    def add_case(self):
-        pass
 
 
 show_case = ShowCase()

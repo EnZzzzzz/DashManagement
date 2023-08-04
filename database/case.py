@@ -14,7 +14,7 @@ class Case:
     ICON = "icon"
 
     def __init__(self, case_name, data):
-        self.case_name = case_name
+        self.name = case_name
         self.prop = Prop(**data.get("prop"))
         self.elements = [Element(**ele_data) for ele_data in data.get("element")]
 
