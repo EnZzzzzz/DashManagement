@@ -1,5 +1,10 @@
+import glob
+
 import dash_bootstrap_components as dbc
 from dash import html
+
+from database.case import Case
+from database.database import db
 
 empty = object()
 
@@ -20,26 +25,16 @@ class ShowCase:
 
     def _lazy_init_layout(self):
         if self._body is empty:
-            self._body = dbc.Card(
-                [
-                    dbc.CardImg(src="/static/imgs/1.jpg", top=True),
-                    dbc.CardBody(
-                        [
-                            html.H4("Card title", className="card-title"),
-                            html.P(
-                                "Some quick example text to build on the card title and "
-                                "make up the bulk of the card's content.",
-                                className="card-text",
-                            ),
-                            dbc.Button("Go somewhere", color="primary"),
-                        ]
-                    ),
-                ],
-                style={"width": "18rem"},
-            )
+            all_case = db.get_all_case()
+            self._body = self._create_card(all_case[0])
 
-    def _create_card(self):
-        pass
+    def _create_card(self, case: Case):
+        card_img = dbc.CardImg(src=case.get_element(Case.IMAGE).source, top=True)
+        title = html.H4(case.get_element(Case.TITLE).source, className=f"{case.case_name}-card-title")
+        desc = html.P(case.get_element(Case.DESC).source, className=f"{case.case_name}-card-title")
+        btn = dbc.Button("Go somewhere", color="primary")
+        card_body = dbc.Card([card_img, title, desc, btn], style={"width": "18rem"})
+        return card_body
 
     def _create_card_title(self):
         pass

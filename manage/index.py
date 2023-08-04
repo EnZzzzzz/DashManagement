@@ -30,8 +30,8 @@ class Index:
         self._nav_links = []
         self._navigator = {}
 
-        self.title = "Sidebar"
-        self.desc = "A simple sidebar layout with navigation links"
+        self.title = "EnZzz"
+        self.desc = "A simple Home for my demos"
 
         self.content = html.Div(id="page-content", style=CONTENT_STYLE)
         self._sidebar = empty
