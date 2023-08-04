@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
 from manage.index import index
 from manage.case.show_case import show_case
+from tools import Console
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -18,4 +19,8 @@ index.activate()
 app.layout = html.Div([dcc.Location(id="url"), index.sidebar, index.content])
 
 if __name__ == '__main__':
+    Console.debug("debug!", highlight=False)
+    Console.info("info!", highlight=False)
+    Console.warn("warn!", highlight=False)
+    Console.error("error!", highlight=False)
     app.run(debug=True)

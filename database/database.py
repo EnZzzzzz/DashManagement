@@ -25,5 +25,8 @@ class DataBase(object, metaclass=SingletonMeta):
             all_case += case_list
         return all_case
 
+    def get_all_industry(self):
+        return list(self._case_dict.keys())
+
 
 db = DataBase()

@@ -17,6 +17,7 @@ class ShowCase:
 
         self._case_list = []
         self._body = empty
+        self.col_num = 3
 
     @property
     def body(self):
@@ -29,11 +30,18 @@ class ShowCase:
             self._body = self._create_card(all_case[0])
 
     def _create_card(self, case: Case):
-        card_img = dbc.CardImg(src=case.get_element(Case.IMAGE).source, top=True)
-        title = html.H4(case.get_element(Case.TITLE).source, className=f"{case.case_name}-card-title")
-        desc = html.P(case.get_element(Case.DESC).source, className=f"{case.case_name}-card-title")
-        btn = dbc.Button("Go somewhere", color="primary")
-        card_body = dbc.Card([card_img, title, desc, btn], style={"width": "18rem"})
+        img = case.get_element(Case.IMAGE).source
+        title = case.get_element(Case.TITLE).source
+        desc = case.get_element(Case.DESC).source
+        card_body = dbc.Card(
+            [
+                dbc.CardImg(src=img, top=True),
+                dbc.CardBody([html.H4(title, className=f"{case.case_name}-card-title"),
+                              html.P(desc, className=f"{case.case_name}-card-text"),
+                              dbc.Button("Go somewhere", color=f"primary")]),
+            ],
+            style={"width": "18rem"},
+        )
         return card_body
 
     def _create_card_title(self):
