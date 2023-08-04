@@ -17,12 +17,12 @@
     {
       "name": "image",
       "type": "image",
-      "source": "imgs/2.jpg"
+      "source": "/static/imgs/2.jpg"
     },
     {
       "name": "icon",
       "type": "image",
-      "source": "imgs/logo.png"
+      "source": "/static/imgs/logo.png"
     }
   ]
 }
