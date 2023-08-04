@@ -37,6 +37,13 @@ class CaseResult(Page):
         )
         return processing
 
+    def _create_color_sample(self, title, hex_color):
+        return dbc.Row([
+            dbc.Col(html.H5(title)),
+            dbc.Col(html.Div(style={"background-color": hex_color,
+                                    "height": "20px", "width": "80px"}))
+        ], justify="start")
+
     def _create_result(self):
         created = dbc.Card([
             dbc.Row([
@@ -48,7 +55,7 @@ class CaseResult(Page):
                         {"key": "4", "src": "/static/imgs/4.jpg", "caption": "Image 1"},
                         {"key": "5", "src": "/static/imgs/5.jpg", "caption": "Image 1"},
                     ], controls=True, indicators=False, interval=4000, ride="carousel",
-                        style={"width": "35rem"},
+                        style={"width": "28rem"},
                     )
                 ]),
                 dbc.Col([
@@ -57,15 +64,13 @@ class CaseResult(Page):
                     dbc.Row([
                         dbc.Col([
                             html.H5("配色编号： 1104"),
-                            html.H5("标题颜色： 1104"),
-                            html.H5("背景颜色： 1104"),
-                            html.H5("附件颜色： 1104"),
+                            html.H5("布局编号： 1104"),
+                            html.H5("标题模板： 1104"),
                         ]),
                         dbc.Col([
-                            html.H5("配色编号： 1104"),
-                            html.H5("标题颜色： 1104"),
-                            html.H5("背景颜色： 1104"),
-                            html.H5("附件颜色： 1104"),
+                            self._create_color_sample("背景颜色是：", "#FF00FF"),
+                            self._create_color_sample("标题颜色是：", "#FF00FF"),
+                            self._create_color_sample("画框颜色是：", "#FF00FF"),
                         ])
                     ])
                 ])
