@@ -1,18 +1,16 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
-from manage.index import index
-from manage.case.show_case import show_case
+from manage import index, home
+from manage.case import show_case, case_result
 from tools import Console
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-index.add_page("Home", "/", html.P("This is the content of the home page!"))
-index.add_page("Page 1", "/page-1", html.P("This is the content of page 1. Yay!"))
-index.add_page("Page 2", "/page-2", html.P("This is the content of page 2!"))
-
+index.add_page(home)
 # 添加样例展示界面
-index.add_page(show_case.name, show_case.url, show_case.body)
+index.add_page(show_case)
+index.add_page(case_result)
 
 index.activate()
 

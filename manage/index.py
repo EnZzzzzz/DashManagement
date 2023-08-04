@@ -2,6 +2,8 @@ import dash
 from dash import html, Output, Input
 import dash_bootstrap_components as dbc
 
+from manage import Page
+
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
     "position": "fixed",
@@ -61,9 +63,9 @@ class Index:
                 style=SIDEBAR_STYLE,
             )
 
-    def add_page(self, name, url, body):
-        self._nav_links.append(dbc.NavLink(name, href=url, active="exact"))
-        self._navigator[url] = body
+    def add_page(self, page: Page):
+        self._nav_links.append(dbc.NavLink(page.name, href=page.url, active="exact"))
+        self._navigator[page.url] = page
 
     def activate(self):
         output = Output("page-content", "children")
@@ -73,7 +75,8 @@ class Index:
             if pathname not in self._navigator:
                 return self._404_error(pathname)
             else:
-                return self._navigator.get(pathname)
+                page: Page = self._navigator.get(pathname)
+                return page.get_body()
 
         dash.callback(output, _input)(navigate_func)
 

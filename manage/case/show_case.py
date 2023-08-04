@@ -5,33 +5,25 @@ from dash import html
 
 from database.case import Case
 from database.database import db
+from manage import Page
 
-empty = object()
 
-
-class ShowCase:
+class ShowCase(Page):
 
     def __init__(self):
-        self.name = "Case"
-        self.url = "/case-list"
+        super(ShowCase, self).__init__("Case", "/case-list")
 
         self._case_list = []
-        self._body = empty
         self.col_num = 3
 
-    @property
-    def body(self):
-        self._lazy_init_layout()
-        return self._body
-
     def _lazy_init_layout(self):
-        if self._body is empty:
-            self._body = html.Div([
-                html.H4("这里是case展示页面"),
+        if self._layout is Page.empty:
+            self._layout = html.Div([
+                html.H4("现网真实样例"),
                 html.Hr(),
                 self._create_primary(),
                 html.Div([dbc.Pagination(max_value=50, first_last=True, previous_next=True, fully_expanded=False,
-                                       style={"justify-content": "center"})])
+                                         style={"justify-content": "center"})])
             ])
 
     def _create_primary(self):
