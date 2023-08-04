@@ -17,12 +17,12 @@
     {
       "name": "image",
       "type": "image",
-      "source": "path/to/image"
+      "source": "imgs/1.jpg"
     },
     {
       "name": "icon",
       "type": "image",
-      "source": "path/to/food_image"
+      "source": "imgs/logo.png"
     }
   ]
 }

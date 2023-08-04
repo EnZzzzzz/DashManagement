@@ -17,12 +17,12 @@
     {
       "name": "icon",
       "type": "image",
-      "source": "path/to/fitness_icon"
+      "source": "imgs/4.jpg"
     },
     {
       "name": "image",
       "type": "image",
-      "source": "path/to/fitness_image"
+      "source": "imgs/logo.png"
     }
   ]
 }

@@ -17,12 +17,12 @@
     {
       "name": "image",
       "type": "image",
-      "source": "path/to/fashion_image"
+      "source": "imgs/3.jpg"
     },
     {
       "name": "icon",
       "type": "image",
-      "source": "path/to/fashion_icon"
+      "source": "imgs/logo.png"
     }
   ]
 }
