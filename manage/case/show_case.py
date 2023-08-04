@@ -26,7 +26,13 @@ class ShowCase:
 
     def _lazy_init_layout(self):
         if self._body is empty:
-            self._body = self._create_primary()
+            self._body = html.Div([
+                html.H4("这里是case展示页面"),
+                html.Hr(),
+                self._create_primary(),
+                html.Div([dbc.Pagination(max_value=50, first_last=True, previous_next=True, fully_expanded=False,
+                                       style={"justify-content": "center"})])
+            ])
 
     def _create_primary(self):
         all_case = db.get_all_case()
