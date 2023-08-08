@@ -1,4 +1,4 @@
-from manage import Page
+from manage.pages import Page
 
 
 class Home(Page):

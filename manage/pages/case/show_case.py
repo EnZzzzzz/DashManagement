@@ -1,11 +1,9 @@
-import glob
-
 import dash_bootstrap_components as dbc
 from dash import html
 
-from database.case import Case
-from database.database import db
-from manage import Page
+from manage.database.case import Case
+from manage.database.database import db
+from manage.pages import Page
 
 
 class ShowCase(Page):

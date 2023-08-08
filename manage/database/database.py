@@ -2,7 +2,7 @@ import glob
 import os.path
 
 from .case import Case
-from tools.functional import SingletonMeta
+from manage.tools.functional import SingletonMeta
 
 POJ_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 

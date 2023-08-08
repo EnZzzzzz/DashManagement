@@ -1,7 +1,7 @@
 from dash import html
 import dash_bootstrap_components as dbc
 
-from manage import Page
+from manage.pages import Page
 
 
 class CaseResult(Page):
@@ -49,11 +49,11 @@ class CaseResult(Page):
             dbc.Row([
                 dbc.Col([
                     dbc.Carousel(items=[
-                        {"key": "1", "src": "/static/imgs/1.jpg", "caption": "Image 1"},
-                        {"key": "2", "src": "/static/imgs/2.jpg", "caption": "Image 1"},
-                        {"key": "3", "src": "/static/imgs/3.jpg", "caption": "Image 1"},
-                        {"key": "4", "src": "/static/imgs/4.jpg", "caption": "Image 1"},
-                        {"key": "5", "src": "/static/imgs/5.jpg", "caption": "Image 1"},
+                        {"key": "1", "manage": "/static/imgs/1.jpg"},
+                        {"key": "2", "manage": "/static/imgs/2.jpg"},
+                        {"key": "3", "manage": "/static/imgs/3.jpg"},
+                        {"key": "4", "manage": "/static/imgs/4.jpg"},
+                        {"key": "5", "manage": "/static/imgs/5.jpg"},
                     ], controls=True, indicators=False, interval=4000, ride="carousel",
                         style={"width": "28rem"},
                     )

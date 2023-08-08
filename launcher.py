@@ -1,9 +1,8 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import Input, Output, dcc, html
-from manage import index, home
-from manage.case import show_case, case_result
-from tools import Console
+from dash import dcc, html
+from manage.pages import index, home
+from manage.pages.case import show_case, case_result
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 

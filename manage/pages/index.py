@@ -2,7 +2,7 @@ import dash
 from dash import html, Output, Input
 import dash_bootstrap_components as dbc
 
-from manage import Page
+from manage.pages import Page
 
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
