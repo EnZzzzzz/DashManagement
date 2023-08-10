@@ -3,7 +3,7 @@
     "industry": "travel",
     "style": "adventure"
   },
-  "element": [
+  "elements": [
     {
       "name": "title",
       "type": "text",

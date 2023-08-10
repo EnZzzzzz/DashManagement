@@ -3,7 +3,7 @@
     "industry": "健身",
     "style": "现代"
   },
-  "element": [
+  "elements": [
     {
       "name": "title",
       "type": "text",

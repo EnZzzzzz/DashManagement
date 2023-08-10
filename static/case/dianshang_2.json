@@ -3,7 +3,7 @@
     "industry": "电商",
     "style": "折扣"
   },
-  "element": [
+  "elements": [
     {
       "name": "title",
       "type": "text",

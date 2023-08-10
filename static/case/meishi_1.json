@@ -3,7 +3,7 @@
     "industry": "美食",
     "style": "时尚"
   },
-  "element": [
+  "elements": [
     {
       "name": "title",
       "type": "text",

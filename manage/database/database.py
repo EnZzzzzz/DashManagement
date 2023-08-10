@@ -1,32 +1,33 @@
 import glob
 import os.path
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 from .case import Case
 from manage.tools.functional import SingletonMeta
 
-POJ_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+from manage import POJ_DIR, STATIC_DIR
+from manage.database import db_url, Base
 
 
 class DataBase(object, metaclass=SingletonMeta):
 
     def __init__(self, resource_dir=None):
-        self.res_dir = resource_dir if resource_dir is not None else os.path.join(POJ_ROOT, "static")
+        self.res_dir = resource_dir if resource_dir is not None else STATIC_DIR
 
-        self._case_dict = {}
-        for case_path in glob.glob(os.path.join(self.res_dir, "case", "*.json")):
-            case = Case.from_json(case_path)
-            case_list = self._case_dict.get(case.prop.industry, [])
-            case_list.append(case)
-            self._case_dict[case.prop.industry] = case_list
+        self.engine = create_engine(db_url, echo=True)
+        self.session = sessionmaker(bind=self.engine)()
 
-    def get_all_case(self):
-        all_case = []
-        for case_list in self._case_dict.values():
-            all_case += case_list
-        return all_case
+        Base.metadata.create_all(self.engine)
 
-    def get_all_industry(self):
-        return list(self._case_dict.keys())
+    def add(self, item):
+        self.session.add(item)
+        self.session.commit()
+
+    def find_all_case(self):
+        _filter = self.session.query(Case).filter()
+        return _filter.all()
 
 
 db = DataBase()

@@ -3,7 +3,7 @@
     "industry": "dianshang",
     "style": "festive"
   },
-  "element": [
+  "elements": [
     {
       "name": "title",
       "type": "text",
