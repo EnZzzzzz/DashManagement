@@ -29,5 +29,10 @@ class DataBase(object, metaclass=SingletonMeta):
         _filter = self.session.query(Case).filter()
         return _filter.all()
 
+    def find_case(self, industry):
+        self.session.query(Case).filter(
+            Case.industry == industry
+        )
+
 
 db = DataBase()

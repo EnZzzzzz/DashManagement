@@ -17,3 +17,8 @@ class TestDataBase(unittest.TestCase):
         db.add(case)
 
         self.assertEquals(num_case + 1, len(db.find_all_case()))
+
+    def test_find_all_case(self):
+        case_list = db.find_all_case()
+        print(f"{len(case_list)} cases were found")
+        self.assertGreater(len(case_list), 0)
